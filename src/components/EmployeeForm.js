@@ -34,7 +34,6 @@ const EmployeeForm = () => {
     } else {
       console.log('handleSubmitaddEmployee', dispatch(addEmployee(formData)));
     }
-    // navigate('/employee');
   };
 
   const handleCancel = () => {

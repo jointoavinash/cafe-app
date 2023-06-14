@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCafes } from '../actions/cafeActions';
 import { addCafe, editCafe } from '../actions/cafeActions';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Form, Input} from 'antd';
-// import { PlusOutlined } from '@ant-design/icons';
 const { TextArea } = Input;
-// const CafeForm = ({ onSubmit, onCancel, initialValues }) => {
 const CafeForm = () => {
   const navigate  = useNavigate();
   const dispatch = useDispatch();
@@ -29,10 +27,6 @@ const CafeForm = () => {
     formData.append('description', description);
     formData.append('logo', logo);
     formData.append('location', location);
-    // let data = {};
-    // for (var key of formData.entries()) {
-    //   data[key[0]] = key[1];
-    // }
 
     if (initialValues?._id) {
         dispatch(editCafe(formData));
@@ -44,7 +38,6 @@ const CafeForm = () => {
 
   const handleCancel = () => {
     navigate('/cafe/'); // Redirect to café page on cancel
-    // return <Link to="/cafe" />
   };
 
   useEffect(() => {

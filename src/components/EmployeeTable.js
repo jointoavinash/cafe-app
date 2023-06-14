@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchEmployees } from '../actions/employeeActions';
 import { Space, Table, Button, PageHeader, Popconfirm } from 'antd';
-// import { Outlet, Link } from "react-router-dom";
 import { useNavigate, Outlet, Link } from 'react-router-dom';
 const BASE_URL = 'http://localhost:4000'; // Replace with your API endpoint
 
@@ -23,7 +22,6 @@ const EmployeeTable = () => {
       ).then( () => {
         console.log( key + 'deleted successfully' );
         dispatch(fetchEmployees());
-        // navigate('/employee');
         navigate(0)
       })
     };
@@ -66,7 +64,7 @@ const EmployeeTable = () => {
             <Space size="middle">
                 <Link to={`/addEditEmployee/${record._id}`}>Edit</Link>
                 <Popconfirm title="Sure to delete?" onConfirm={() => handleEmployeeDelete(record._id)}>
-                    <a>Delete</a>
+                  <Link>Delete</Link>
                 </Popconfirm>
             </Space>
         },

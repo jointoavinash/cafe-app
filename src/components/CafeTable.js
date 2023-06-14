@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Space, Table, Button, PageHeader, Popconfirm } from 'antd';
 import { fetchCafes } from '../actions/cafeActions';
